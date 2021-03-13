@@ -97,7 +97,7 @@
 
 
 			 <!--ERRO NO DEPLOYER -> transferência from src/frontend/dist to target/classes/static to -->
-			 <!-- <plugin>
+			 <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
 				<executions>
@@ -118,7 +118,7 @@
 						</configuration>
 					</execution>
 				</executions>
-			</plugin> -->
+			</plugin>
 			
 		</plugins>
 	</build>
