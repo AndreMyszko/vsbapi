@@ -48,6 +48,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<!--Instala o node e o npm localmente, para fazer o deploy com todas as dependencias-->
 			<plugin>
 				<groupId>com.github.eirslett</groupId>
 				<artifactId>frontend-maven-plugin</artifactId>
@@ -96,7 +97,7 @@
 			</plugin>
 
 
-			 <!--ERRO NO DEPLOYER -> transferência from src/frontend/dist to target/classes/static to -->
+			 <!--transferência from src/frontend/dist to target/classes/static to -->
 			 <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
@@ -117,6 +118,21 @@
 							</resources>
 						</configuration>
 					</execution>
+				</executions>
+			</plugin>
+
+			<!--Limpa todos os arquivos anteriores ao fazer um build para fazer o deploy-->
+			<plugin>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>3.1.0</version>
+				<executions>
+				<execution>
+					<id>auto-clean</id>
+					<phase>initialize</phase>
+					<goals>
+					<goal>clean</goal>
+					</goals>
+				</execution>
 				</executions>
 			</plugin>
 			
