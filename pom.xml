@@ -78,7 +78,7 @@
 						</configuration>
 					</execution>
 
-					<execution>
+					<!--<execution>
 						<id>npm build</id>
 						<goals>
 							<goal>npm</goal>
@@ -87,7 +87,7 @@
 						<configuration>
 							<arguments>run build</arguments>
 						</configuration>
-					</execution>
+					</execution>-->
 				</executions>
 				<configuration>
 					<nodeVersion>${node.version}</nodeVersion>
@@ -120,7 +120,7 @@
 					</execution>
 				</executions>
 			</plugin>
-
+ 
 			<!--Limpa todos os arquivos anteriores ao fazer um build para fazer o deploy-->
 			<plugin>
 				<artifactId>maven-clean-plugin</artifactId>
