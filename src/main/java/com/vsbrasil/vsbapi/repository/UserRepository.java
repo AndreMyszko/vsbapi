@@ -1,8 +1,8 @@
-// package com.vsbrasil.vsbapi.repository;
+package com.vsbrasil.vsbapi.repository;
 
-// import com.vsbrasil.vsbapi.entity.User;
-// import org.springframework.data.repository.CrudRepository;
+import com.vsbrasil.vsbapi.entity.User;
+import org.springframework.data.repository.CrudRepository;
 
-// public interface UserRepository extends CrudRepository<User, Integer> {
-//     User findByName(String name);
-// }
+public interface UserRepository extends CrudRepository<User, Integer> {
+    User findByName(String name);
+}
