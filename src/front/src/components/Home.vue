@@ -1,5 +1,5 @@
 <template>
-<h1>{{msg}}</h1>
+<h1>{{title}}</h1>
 </template>
 
 <script>
@@ -7,14 +7,14 @@ export default {
   name: 'Home',
   data(){
     return {
-      msg: ''
+      title: ''
     }
   },
   mounted() {
     fetch("api/home") 
       .then((response) => response.text())
       .then((data) => {
-        this.msg = data;
+        this.title = data;
       })
   }
 }
