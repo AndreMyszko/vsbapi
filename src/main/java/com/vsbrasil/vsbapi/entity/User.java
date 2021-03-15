@@ -2,6 +2,7 @@ package com.vsbrasil.vsbapi.entity;
 
 import javax.persistence.*;
 
+//POJO
 @Entity
 @Table(name = "user_tbl")
 public class User {
