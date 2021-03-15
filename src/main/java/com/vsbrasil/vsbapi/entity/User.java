@@ -9,11 +9,22 @@ public class User {
     //ATRIBUTES:
     @Id //PK - primarykey
     @GeneratedValue(strategy = GenerationType.AUTO) //AI - autoincrement
+    @Column(name = "id")
     private Integer id;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "email")
     private String email;
+
+    @Column(name = "password")
     private String password;
+
+    @Column(name = "user_role")
     private String user_role;
+
+    @Column(name = "active")
     private Boolean active;
 
     //CONSTRUCTORS:
