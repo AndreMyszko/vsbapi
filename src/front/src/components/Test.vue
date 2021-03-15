@@ -11,7 +11,7 @@ export default {
     }
   },
   mounted() {
-    fetch("api/home") 
+    fetch("api/test") 
       .then((response) => response.text())
       .then((data) => {
         this.title = data;
