@@ -1,5 +1,6 @@
 package com.vsbrasil.vsbapi.entity;
 
+import java.util.*;
 import javax.persistence.*;
 
 //POJO
@@ -22,8 +23,9 @@ public class User {
     private String password;
 
     @Column(name = "user_role")
-    private String user_role;
-
+    @OneToMany(fetch = FetchType.EAGER,mappedBy="user",cascade = CascadeType.ALL) //FK - foregninkey (one to many)
+    private Set<User_Roles> user_role;
+    
     @Column(name = "active")
     private Boolean active;
 
@@ -33,7 +35,7 @@ public class User {
     }
 
     //all fields constructor:
-    public User(Integer id, String name, String email, String password, String user_role, Boolean active) {
+    public User(Integer id, String name, String email, String password, Set<User_Roles> user_role, Boolean active) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -43,7 +45,7 @@ public class User {
     }
 
     //no ID constructor:
-    public User(String name, String email, String password, String user_role, Boolean active) {
+    public User(String name, String email, String password, Set<User_Roles> user_role, Boolean active) {
         this.name = name;
         this.email = email;
         this.password = password;
@@ -81,11 +83,11 @@ public class User {
         this.password = password;
     }
 
-    public String getUser_role() {
+    public Set<User_Roles> getUser_role() {
         return this.user_role;
     }
 
-    public void setUser_role(String user_role) {
+    public void setUser_role(Set<User_Roles> user_role) {
         this.user_role = user_role;
     }
 
