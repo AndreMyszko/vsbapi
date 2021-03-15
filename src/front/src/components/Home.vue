@@ -4,14 +4,14 @@
 
 <script>
 export default {
-  name: 'Test',
+  name: 'Home',
   data(){
     return {
       title: ''
     }
   },
   mounted() {
-    fetch("api/test") 
+    fetch("api/home") 
       .then((response) => response.text())
       .then((data) => {
         this.title = data;
