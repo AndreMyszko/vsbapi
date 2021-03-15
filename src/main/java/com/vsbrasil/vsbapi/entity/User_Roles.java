@@ -11,6 +11,7 @@ public class User_Roles {
     @GeneratedValue(strategy = GenerationType.AUTO) //AI - autoincrement
     @Column(name = "id")
     private Integer id;
+    
     @Column(name = "name")
     private String name;
 
