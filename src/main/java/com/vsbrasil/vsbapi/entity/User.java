@@ -5,16 +5,24 @@ import javax.persistence.*;
 @Entity
 @Table(name = "user_tbl")
 public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id //PK - primarykey
+    @GeneratedValue(strategy = GenerationType.AUTO) //AI - autoincrement
     private Integer id;
     private String name;
-    private int age;
+    // private String email;
+    // private String password;
+    // private String user_role;
+    // private Boolean active;
+
+
+    //private int age;
+
+    
     public User() {
     }
-    public User(String name, int age) {
+    public User(String name /*int age*/) {
         this.name = name;
-        this.age = age;
+        //this.age = age;
     }
     public Integer getId() {
         return id;
@@ -28,17 +36,13 @@ public class User {
     public void setName(String name) {
         this.name = name;
     }
-    public int getAge() {
-        return age;
-    }
-    public void setAge(int age) {
-        this.age = age;
-    }
+
     @Override
     public String toString() {
-        return "User{" +
-                ", name='" + name + '\'' +
-                ", Age=" + age +
-                '}';
+        return "{" +
+            " id='" + getId() + "'" +
+            ", name='" + getName() + "'" +
+            "}";
     }
+    
 }
