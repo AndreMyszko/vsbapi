@@ -15,9 +15,9 @@ public class User_Roles {
     @Column(name = "name")
     private String name;
 
-    @ManyToOne(cascade = CascadeType.ALL) //FK - foregnin key (many to one)
-    @JoinColumn(name = "user")
-    private User user;
+    // @ManyToOne(cascade = CascadeType.ALL) //FK - foregnin key (many to one)
+    // @JoinColumn(name = "user")
+    // private User user;
 
 
     //CONSTRUCTORS:
@@ -26,16 +26,16 @@ public class User_Roles {
     }
 
     //all fields constructor:
-    public User_Roles(Integer id, String name, User user) {
+    public User_Roles(Integer id, String name/*, User user*/) {
         this.id = id;
         this.name = name;
-        this.user = user;
+        //this.user = user;
     }
 
     //no ID constructor:
-    public User_Roles(String name, User user) {
+    public User_Roles(String name/*, User user*/) {
         this.name = name;
-        this.user = user;
+        //this.user = user;
     }
 
     //GETTERS AND SETTERS:
@@ -55,20 +55,20 @@ public class User_Roles {
         this.name = name;
     }
 
-    public User getUser(){
-        return user;
-    }
+    // public User getUser(){
+    //     return user;
+    // }
 
-    public void setUser(User user){
-        this.user = user;
-    }
+    // public void setUser(User user){
+    //     this.user = user;
+    // }
 
     //TO STRING:
     @Override
     public String toString() {
         return "{" +
             " id='" + getId() + "'" +
-            ", name='" + getName() + "'" +
+            //", name='" + getName() + "'" +
             "}";
     }
 
