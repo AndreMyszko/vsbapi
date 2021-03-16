@@ -19,21 +19,27 @@
     	<npm.version>6.14.11</npm.version>
 	</properties>
 	<dependencies>
+		<!--Web Development Dependency-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
+		<!--Security Dependency-->
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+			<version>5.4.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.servicemix.bundles</groupId>
+			<artifactId>org.apache.servicemix.bundles.spring-security-config</artifactId>
+			<version>3.2.10.RELEASE_1</version>
 		</dependency>
 		<!--Database Dependency-->
 		<dependency>
@@ -41,12 +47,6 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>8.0.22</version>
 		</dependency>
-		<!--Iria utilizar o banco mssql, mas por estar instanciado em um servidor de vm optei por usar mysql localhost:3306-->
-		<!-- <dependency>
-			<groupId>com.microsoft.sqlserver</groupId>
-			<artifactId>mssql-jdbc</artifactId>
-			<scope>runtime</scope>
-		</dependency> -->
 		<!--Persistance Java Dependency-->
 		<dependency>
 			<groupId>javax.persistence</groupId>
@@ -62,14 +62,18 @@
 			<artifactId>hibernate-jpa-2.1-api</artifactId>
 			<version>1.0.0.Final</version>
 		</dependency>
-		<!--JUnity-->
+		<!--Test Dependency-->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.13.2</version>
 			<scope>test</scope>
 		</dependency>
-
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -119,6 +123,7 @@
 							<arguments>run build</arguments>
 						</configuration>
 					</execution> -->
+					
 				</executions>
 				<configuration>
 					<nodeVersion>${node.version}</nodeVersion>
@@ -157,13 +162,13 @@
 				<artifactId>maven-clean-plugin</artifactId>
 				<version>3.1.0</version>
 				<executions>
-				<execution>
-					<id>auto-clean</id>
-					<phase>initialize</phase>
-					<goals>
-					<goal>clean</goal>
-					</goals>
-				</execution>
+					<execution>
+						<id>auto-clean</id>
+						<phase>initialize</phase>
+						<goals>
+							<goal>clean</goal>
+						</goals>
+					</execution>
 				</executions>
 			</plugin>
 			
