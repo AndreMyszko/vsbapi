@@ -60,6 +60,6 @@ public class User_Details implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return true; //active
+        return active;
     }
 }
