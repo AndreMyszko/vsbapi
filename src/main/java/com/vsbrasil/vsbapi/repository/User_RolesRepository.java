@@ -1,9 +1,11 @@
 package com.vsbrasil.vsbapi.repository;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.Optional;
+
 import com.vsbrasil.vsbapi.entity.User_Roles;
-import org.springframework.data.repository.CrudRepository;
 
 //Conexão JPA: entity/database
-public interface User_RolesRepository extends CrudRepository<User_Roles, Integer> {
-    User_Roles findByName(String name);
+public interface User_RolesRepository extends JpaRepository<User_Roles, Integer> {
+    Optional<User_Roles> findByName(String name);
 }
