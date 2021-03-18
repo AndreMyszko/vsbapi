@@ -12,22 +12,29 @@ import com.vsbrasil.vsbapi.repository.UserRepository;
 @RequestMapping("/api")
 public class HomeController {
 
+    //instantiate user repository
     @Autowired
     private UserRepository userRepository;
 
-    // not logged user
+    //not logged user
     @GetMapping("/home")
     public String title() {
         return ("Virtual Solution");
     }
 
-    // user by id
+    //find all users
+    @GetMapping("/all-users")
+    public List<User> listUsers() {
+        return userRepository.findAll();
+    }
+
+    // find user by id
     @GetMapping("/id={id}")
     public Optional<User> selectById(@PathVariable(value = "id") Integer id) {
         return userRepository.findById(id);
     }
 
-    // user by name
+    // find user by name
     @GetMapping("/name={name}")
     public List<User> selectByName(@PathVariable(value = "name") String name) {
         return userRepository.findByName(name);
@@ -40,11 +47,6 @@ public class HomeController {
     }
 
     // AUTHENTICATION AND AUTHORIZATION:
-    // all users
-    @GetMapping("/all-users")
-    public List<User> listUsers() {
-        return userRepository.findAll();
-    }
 
     // logged normal user
     @PostMapping("/user")

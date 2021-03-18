@@ -1,2 +1,3 @@
-INSERT INTO user_tbl (id, name, email, password, user_role, active) 
-VALUES (2, 'andre', 'email@email.com', '123', 'admin', (0));
+----*** INSERT USER: (usado caso o db não tenha um usuario para testes)***--
+-- INSERT INTO user_tbl (id, name, email, password, user_role, active) 
+-- VALUES (0, 'andre', 'email@email.com', '123', 'admin', (0));
