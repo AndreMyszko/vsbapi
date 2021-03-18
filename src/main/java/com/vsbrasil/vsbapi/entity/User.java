@@ -1,11 +1,9 @@
 package com.vsbrasil.vsbapi.entity;
 
-//import java.io.Serializable;
-
 //import java.util.*;
 import javax.persistence.*;
-
-//import javassist.SerialVersionUID;
+// import java.io.Serializable;
+// import javassist.SerialVersionUID;
 
 //POJO
 @Entity
