@@ -1,6 +1,6 @@
 package com.vsbrasil.vsbapi.entity;
 
-import java.io.Serializable;
+//import java.io.Serializable;
 
 //import java.util.*;
 import javax.persistence.*;
