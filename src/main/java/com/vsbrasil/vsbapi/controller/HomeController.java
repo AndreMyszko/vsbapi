@@ -33,6 +33,12 @@ public class HomeController {
         return userRepository.findByName(name);
     }
 
+    // insert new user
+    @PostMapping("insert-user")
+    public User savetUser(@RequestBody User user) {
+        return userRepository.save(user);
+    }
+
     // AUTHENTICATION AND AUTHORIZATION:
     // all users
     @GetMapping("/all-users")

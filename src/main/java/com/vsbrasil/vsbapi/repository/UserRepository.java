@@ -9,13 +9,18 @@ import com.vsbrasil.vsbapi.entity.User;
 //Conexão JPA: entity/database
 public interface UserRepository extends JpaRepository<User, Integer> {
     //FIND ALL USERS:
-    //JpaRepository procedure.
+    //JPA - userRepository.findAll();
 
     //FIND USER BY ID:
     Optional<User> findById(Integer id);
 
     //FIND USER BY NAME:
     List<User> findByName(String name);
+
+    //INSERT USER:
+    //JPA - userRepository.save();
+
+
 
 
 }
