@@ -1,26 +1,64 @@
 package com.vsbrasil.vsbapi.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import java.util.List;
+import java.util.Optional;
+
+import com.vsbrasil.vsbapi.entity.User;
+import com.vsbrasil.vsbapi.repository.UserRepository;
 
 @RestController()
 @RequestMapping("/api")
 public class HomeController {
+
+    //instantiate user repository
+    @Autowired
+    private UserRepository userRepository;
+
     //not logged user
     @GetMapping("/home")
-    public String home() {
-        return ("<h1>Welcome</h1><p style='background-color:red;'>This page do not need any autorization to be accessed<p>");
+    public String title() {
+        return ("Virtual Solution");
     }
 
-    //logged normal user
-    @GetMapping("/user")
+    //find all users
+    @GetMapping("/all-users")
+    public List<User> listUsers() {
+        return userRepository.findAll();
+    }
+
+    // find user by id
+    @GetMapping("/id={id}")
+    public Optional<User> selectById(@PathVariable(value = "id") Integer id) {
+        return userRepository.findById(id);
+    }
+
+    // find user by name
+    @GetMapping("/name={name}")
+    public List<User> selectByName(@PathVariable(value = "name") String name) {
+        return userRepository.findByName(name);
+    }
+
+    // insert new user
+    @PostMapping("insert-user")
+    public User savetUser(@RequestBody User user) {
+        return userRepository.save(user);
+    }
+
+    // AUTHENTICATION AND AUTHORIZATION:
+
+    // logged normal user
+    @PostMapping("/user")
     public String user() {
-        return ("<h1>Welcome User</h1><p style='background-color:blue;'>This page do not need any autorization to be accessed<p>");
+
+        return ("Virtual Solution - User");
     }
 
-    //logged admin user
-    @GetMapping("/admin")
+    // logged admin user
+    @PostMapping("/admin")
     public String admin() {
-        return ("<h1>Welcome Admin</h1><p style='background-color:green;'>This page do not need any autorization to be accessed<p>");
+        return ("Virtual Solution - Admin");
     }
-    
+
 }

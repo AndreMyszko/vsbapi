@@ -1,34 +1,37 @@
-package com.vsbrasil.vsbapi.service;
+// package com.vsbrasil.vsbapi.service;
 
-import org.springframework.security.core.userdetails.UserDetailsService;
+// import org.springframework.security.core.userdetails.UserDetailsService;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.stereotype.Service;
-import java.util.Optional;
+// import org.springframework.beans.factory.annotation.Autowired;
+// import org.springframework.security.core.userdetails.UserDetails;
+// import org.springframework.security.core.userdetails.UserDetailsService;
+// import org.springframework.security.core.userdetails.UsernameNotFoundException;
+// import org.springframework.stereotype.Service;
+// import java.util.Optional;
 
-import com.vsbrasil.vsbapi.entity.User;
-import com.vsbrasil.vsbapi.entity.User_Details;
-import com.vsbrasil.vsbapi.repository.UserRepository;
+// import com.vsbrasil.vsbapi.entity.User;
+// import com.vsbrasil.vsbapi.entity.User_Details;
+// import com.vsbrasil.vsbapi.repository.UserRepository;
 
-@Service
-public class MyUserDetailService implements UserDetailsService {
+// @Service
+// public class MyUserDetailService implements UserDetailsService {
 
-    //Call the UserRepository (inject):
-    @Autowired
-    UserRepository userRepository;
+//     //Call the UserRepository (inject):
+//     @Autowired
+//     UserRepository userRepository;
 
-    //Bring to the service some user with this specific name from UserRepository injection:
-    @Override
-    public UserDetails loadUserByUsername(String name) throws UsernameNotFoundException {
-        Optional<User> user = userRepository.findByName(name);
+//     //Bring to the service some user with this specific name from UserRepository injection:
+//     @Override
+//     //a autorização precisa de alguma valor único, como por exemplo o email...
 
-        //Exception para quando o nome do usuário não existe no banco de dados
-        user.orElseThrow(() -> new UsernameNotFoundException("Não há registros do usuário --" + name + "-- não foi encontrado no sistema."));
+//     public UserDetails loadUserByUsername(String name) throws UsernameNotFoundException {
+//         Optional<User> user = userRepository.findByName(name);
 
-        //retorna o usuário da busca
-        return user.map(User_Details::new).get();
-    }
-}
+//         //Exception para quando o nome do usuário não existe no banco de dados
+//         user.orElseThrow(() -> new UsernameNotFoundException("Não há registros do usuário --" + name + "-- não foi encontrado no sistema."));
+
+//         //retorna o usuário da busca
+//         return user.map(User_Details::new).get();
+//     }
+
+// }

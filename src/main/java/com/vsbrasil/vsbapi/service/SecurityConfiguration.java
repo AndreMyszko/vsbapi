@@ -25,7 +25,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     //Autorization
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
+        //csrf -> disable (evita a necessidade de um tokien e cookies para a aplicacao - não utilizado em producao ')
+        http.csrf().disable().authorizeRequests()
                 .antMatchers("/api/admin").hasRole("admin")
                 .antMatchers("/api/user").hasAnyRole("admin", "user")
                 .antMatchers("/api/home").permitAll()
