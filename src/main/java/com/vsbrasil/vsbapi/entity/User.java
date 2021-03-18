@@ -1,12 +1,20 @@
 package com.vsbrasil.vsbapi.entity;
 
+import java.io.Serializable;
+
 //import java.util.*;
 import javax.persistence.*;
+
+//import javassist.SerialVersionUID;
 
 //POJO
 @Entity
 @Table(name = "user_tbl")
-public class User {
+public class User /*implements Serializable*/{
+
+    //Serializeble key:
+    //private static final Integer SerialVersionUID = 1L;
+
     //ATRIBUTES:
     @Id //PK - primarykey
     @GeneratedValue(strategy = GenerationType.AUTO) //AI - autoincrement
