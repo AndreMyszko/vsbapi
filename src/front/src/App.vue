@@ -5,7 +5,7 @@
     <Home />
     <TableUser />
 
-    <router-view/>    
+    <!--<router-view/>-->    
       
   </div>
 </template>
@@ -22,6 +22,7 @@ export default {
     Home,
     TableUser
   }
+
 }
 </script>
 
