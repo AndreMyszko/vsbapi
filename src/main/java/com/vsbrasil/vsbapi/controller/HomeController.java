@@ -36,7 +36,7 @@ public class HomeController {
 
     // find user by id
     @GetMapping("/user-id={id}")
-    @ApiOperation(value = "SHOW USER BY ID")
+    @ApiOperation(value = "SHOW USER BY ID - UNIQUE")
     public Optional<User> selectById(@PathVariable(value = "id") Integer id) {
         return userRepository.findById(id);
     }
@@ -48,6 +48,14 @@ public class HomeController {
         return userRepository.findByName(name);
     }
 
+    // find user by email (UNIQUE)
+    @GetMapping("/user-name={email}")
+    @ApiOperation(value = "SHOW USERS BY EMAIL - UNIQUE")
+    public Optional<User> selectByEmail(@PathVariable(value = "email") String email) {
+        return userRepository.findByEmail(email);
+    }
+    
+
     // insert new user
     @PostMapping("/insert-user")
     @ApiOperation(value = "INSERT NEW USER")
@@ -57,13 +65,13 @@ public class HomeController {
 
     // delete user (VOID)
     @DeleteMapping("/delete-user")
-    @ApiOperation(value = "DELETE USER")
+    @ApiOperation(value = "DELETE USER - UNIQUE")
     public void deleteUser(@RequestBody User user){
         userRepository.delete(user);
     }
 
     // update user 
-    @PutMapping("/update-user")
+    @PutMapping("/update-user - UNIQUE")
     @ApiOperation(value = "UPDATE USER")
     public User updateUser(@RequestBody User user){
         return userRepository.save(user);

@@ -12,6 +12,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 //not Entity, only for Service...
 public class User_Details implements UserDetails {
 
+    private static final long serialVersionUID = 1L;
+    
     private String name;
     private String password;
     private boolean active;

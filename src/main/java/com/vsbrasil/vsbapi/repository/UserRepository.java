@@ -17,6 +17,8 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     //FIND USER BY NAME: [GET]
     List<User> findByName(String name);
 
+    Optional<User> findByEmail(String email);
+
     //INSERT USER: [POST]*
     //JPA - userRepository.save();
 
