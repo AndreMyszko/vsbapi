@@ -2,9 +2,12 @@ package com.vsbrasil.vsbapi.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
+
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -15,11 +18,25 @@ import com.vsbrasil.vsbapi.repository.UserRepository;
 @RequestMapping("/api")
 @Api(value = "HOME / USER CONTROLLER")
 @CrossOrigin() //origins = "*"
-public class HomeController {
+public class UserController {
 
     // instantiate user repository
     @Autowired
     private UserRepository userRepository;
+
+    // instatntiate restTemplate
+    @Autowired
+    private RestTemplate restTemplate;
+
+    // private static String url_allmoedas = "https://economia.awesomeapi.com.br/all/USD-BRL,EUR-BRL,BTC-BRL"; 
+    public static String url_covidstatus = "https://covid19-api.org/api/status";
+
+    // restTemplate test with countries api
+    @GetMapping("/covid-status")
+    public List<Object> all(){
+        Object[] covidStatusObjects  = restTemplate.getForObject(url_covidstatus, Object[].class);
+        return Arrays.asList(covidStatusObjects);
+    }
 
     // not logged user
     @GetMapping("/home")
