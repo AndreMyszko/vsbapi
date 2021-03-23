@@ -1,7 +1,7 @@
 <template>
-    <footer class="footer fixed-bottom mt-auto py-3 bg-light">
-        <div>
-            <p class="navbar-brand ml-4" href="#">{{title}}</p>
+    <footer class="footer fixed-bottom py-2 bg-light">
+        <div class="container">
+            <p class="navbar-brand ml-4 mt-0 mb-0" href="#">{{title}} © (2021) by Visual Studio Spring Boot S.A</p>
         </div>
     </footer>
 </template>
