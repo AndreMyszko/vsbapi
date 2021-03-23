@@ -4,6 +4,7 @@
     <Header />
     <Home />
     <TableUser />
+    <Footer />
 
     <!--<router-view/>-->    
       
@@ -13,6 +14,7 @@
 <script>
 import Header from './components/Header'
 import Home from './components/Home.vue'
+import Footer from './components/Footer.vue'
 import TableUser from './components/TableUser'
 
 export default {
@@ -20,13 +22,14 @@ export default {
   components: {
     Header,
     Home,
+    Footer,
     TableUser
   }
 
 }
 </script>
 
-<!--
+<!-- GENERAL CSS, NOT SCOPED
 <style>
 #app {
 }
