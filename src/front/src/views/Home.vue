@@ -1,8 +1,10 @@
 <template>
 
-<div class="container">
-  <h1>{{title}}</h1>
-  <h3>Users</h3>
+<div class="container bg-light">
+  <h4>Home</h4>
+  <h5>{{title}}</h5>
+  <p>Home page acessível à todos os usuários, tela para cadastro e login....</p>
+  <br>
 </div>
 
 </template>
@@ -26,7 +28,8 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<!--
 <style scoped>
+    .container{
+        border-radius: 12px;
+    }
 </style>
--->

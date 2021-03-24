@@ -1,6 +1,12 @@
 <template>
 
-<div class="container">
+  <div>
+    <h5>All Users</h5>
+ 
+  <form class=" col-md-6 d-flex">
+    <input class="form-control me-2" type="search" placeholder="Buscar usuários" aria-label="Search">
+    <button class="btn bg-dark" type="submit">Pesquisar</button>
+  </form>
   <table class="table">
     <thead>
       <tr>
@@ -9,6 +15,8 @@
         <th scope="col">Email</th>
         <th scope="col">Role</th>
         <th scope="col">Active</th>
+        <th scope="col">Editar</th>
+        <th scope="col">Excluir</th>
       </tr>
     </thead>
 
@@ -19,9 +27,30 @@
         <td>email@email.com</td>
         <td>admin</td>
         <td>true</td>
+        <td><button type="submit" class="btn bg-primary"> -> </button></td>
+        <td><button type="submit" class="btn bg-danger"> X </button></td>
       </tr>
     </tbody>
-    <tbody>
+  </table>
+ </div>
+</template>
+
+<script>
+export default {
+    name: 'TableUser'
+}
+</script>
+
+<style scoped>
+
+.btn{
+  border-radius: 12px;
+}
+
+</style>
+
+<!--Apenas mais linhas comentadas da teblea para testes, pode ser excluido... -->
+    <!-- <tbody>
       <tr>
         <th scope="row">2</th>
         <td>Mithrandir</td>
@@ -65,18 +94,4 @@
           <td>user</td>
           <td>true</td>
           </tr>
-      </tbody>
-  </table>
-</div>
-
-</template>
-
-<script>
-export default {
-    name: 'TableUser'
-}
-</script>
-
-<style scoped>
-
-</style>
+      </tbody> -->
