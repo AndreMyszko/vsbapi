@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "primeicons": "^4.1.0",
+    "primevue": "^3.3.5",
     "vue": "^2.6.11"
   },
   "devDependencies": {
@@ -33,7 +35,7 @@
       "parser": "babel-eslint"
     },
     "rules": {
-      "no-console" : "off"
+      "no-console": "off"
     }
   },
   "browserslist": [
