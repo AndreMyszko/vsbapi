@@ -2,15 +2,12 @@
   <div id="app">
 
     <Header />
-    <br>
-    <br>
-    <br>
+    <br><br><br>
     <Home />
+    <br>
     <User />
     <Admin />
-    <br>
-    <br>
-    <br>
+    <br><br><br>
     <Footer />
   
   </div>

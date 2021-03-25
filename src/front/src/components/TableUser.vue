@@ -3,9 +3,9 @@
   <div>
     <h5>All Users</h5>
  
-  <form class=" col-md-6 d-flex">
+  <form class=" col-md-6 d-flex mb-2">
     <input class="form-control me-2" type="search" placeholder="Buscar usuários" aria-label="Search">
-    <button class="btn bg-dark" type="submit">Pesquisar</button>
+    <button class="btn bg-dark text-light ml-2" type="submit">Pesquisar</button>
   </form>
   <table class="table">
     <thead>
@@ -27,8 +27,8 @@
         <td>email@email.com</td>
         <td>admin</td>
         <td>true</td>
-        <td><button type="submit" class="btn bg-primary"> -> </button></td>
-        <td><button type="submit" class="btn bg-danger"> X </button></td>
+        <td><button type="submit" class="btn bg-primary text-light"> > </button></td>
+        <td><button type="submit" class="btn bg-danger text-light"> X </button></td>
       </tr>
     </tbody>
   </table>
