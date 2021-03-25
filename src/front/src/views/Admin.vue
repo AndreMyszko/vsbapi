@@ -1,6 +1,10 @@
 <template>
-<div class="container bg-light">
-    <h4>Administrator</h4>
+<div class="container bg-light pt-3">
+    <h4>
+        <b-icon icon="graph-up"></b-icon>
+        Administrator
+    </h4>
+    <hr>
     <h5>Graphics</h5>
     <br>
 

@@ -2,7 +2,8 @@
 <div>
     <h5>New User</h5>
 
-    <form class="row g-3">
+    <!--REGISTER USER FORM BOOTSTRAP-->
+    <!-- <form class="row g-3">
         <div class="col-12">
             <label class="form-label">Nome</label>
             <input type="text" class="form-control" id="inputName" placeholder="nome">
@@ -50,7 +51,7 @@
             <button type="submit" class="btn bg-dark text-light">Registrar</button>
         </div>
 
-    </form>
+    </form> -->
 
 </div>
 </template>

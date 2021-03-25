@@ -4,7 +4,6 @@
     <Header />
     <br><br><br>
     <Home />
-    <br>
     <User />
     <Admin />
     <br><br><br>

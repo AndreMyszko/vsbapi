@@ -1,10 +1,15 @@
 <template>
 
-<div class="container bg-light">
-    <h4>Users</h4>
+<div class="container bg-light mb-2 pt-3">
+    <h4>
+        <b-icon icon="people-fill"></b-icon>
+        Users
+    </h4>
+    <hr>
     <RegisterUser />
     <hr>
     <TableUser />
+    <br>
 </div>
 
 </template>
