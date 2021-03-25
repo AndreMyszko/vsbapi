@@ -3,7 +3,7 @@
   <div>
     <h5>All Users</h5>
  
-  <form class=" col-md-6 d-flex mb-2">
+  <!-- <form class=" col-md-6 d-flex mb-2">
     <input class="form-control me-2" type="search" placeholder="Buscar usuários" aria-label="Search">
     <button class="btn bg-dark text-light ml-2" type="submit">Pesquisar</button>
   </form>
@@ -31,13 +31,30 @@
         <td><button type="submit" class="btn bg-danger text-light"> X </button></td>
       </tr>
     </tbody>
-  </table>
+  </table> -->
  </div>
 </template>
 
 <script>
+
+import UserService from '../service/UserService';
+
 export default {
-    name: 'TableUser'
+    name: 'TableUser',
+    data(){
+      return{
+        users : null
+      }
+    },
+    userService : null,
+    created(){
+      this.userService = new UserService();
+    },
+    mounted(){
+      this.userService.getAll().then(data => {
+        console.log(data);
+      })
+    }
 }
 </script>
 
