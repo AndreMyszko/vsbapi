@@ -3,55 +3,13 @@
   <div>
     <h5>All Users</h5>
 
-    <!-- PRIME VIEW TABLE-->
-
-    <!-- <DataTable :value="users" :paginator="true" :rows="10" paginatorTemplate="CurrentPageReport FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink RowsPerPageDropdown" :rowsPerPageOptions="[10,20,50]" currentPageReportTemplate="Showing {first} to {last} of {totalRecords}">
-        <Column field="id" header="ID"></Column>
-        <Column field="name" header="Nome"></Column>
-        <Column field="email" header="Email"></Column>
-        <Column field="password" header="Senha"></Column>
-        <Column field="user_role" header="UserRole"></Column>
-        <Column field="active" header="Status"></Column>
-        <template #paginatorLeft>
-            <Button type="button" icon="pi pi-refresh" class="p-button-text" />
-        </template>
-        <template #paginatorRight>
-            <Button type="button" icon="pi pi-cloud" class="p-button-text" />
-        </template>
-    </DataTable>  -->
+    <template>
+      <div>
+        <b-table striped hover :items="items" :fields="fields"></b-table>
+      </div>
+    </template>
 
 
-  <!-- BOOTSTRAP TABLE   -->
-
-  <!-- <form class=" col-md-6 d-flex mb-2">
-    <input class="form-control me-2" type="search" placeholder="Buscar usuários" aria-label="Search">
-    <button class="btn bg-dark text-light ml-2" type="submit">Pesquisar</button>
-  </form>
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Name</th>
-        <th scope="col">Email</th>
-        <th scope="col">Role</th>
-        <th scope="col">Active</th>
-        <th scope="col">Editar</th>
-        <th scope="col">Excluir</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Andre Myszko</td>
-        <td>email@email.com</td>
-        <td>admin</td>
-        <td>true</td>
-        <td><button type="submit" class="btn bg-primary text-light"> > </button></td>
-        <td><button type="submit" class="btn bg-danger text-light"> X </button></td>
-      </tr>
-    </tbody>
-  </table> -->
  </div>
 
 </template>
@@ -64,18 +22,48 @@ export default {
     name: 'TableUser',
     data(){
       return{
-        users : null
+
+        fields: ['ID', 'nome', 'email', 'role', 'senha', 'ativo'],
+        items: [
+          {
+            ID: 1, 
+            nome: 'Andre', 
+            email: 'email@email.com', 
+            role: 'admin', 
+            senha: '123',
+            ativo: true
+          },
+          {
+            ID: 2, 
+            nome: 'Mithrandir', 
+            email: 'email@email.com', 
+            role: 'admin', 
+            senha: '321',
+            ativo: true
+          },
+          {
+            ID: 3, 
+            nome: 'Palpatine', 
+            email: 'email@email.com', 
+            role: 'user', 
+            senha: '555',
+            ativo: false
+          }
+        ]
       }
     },
     userService : null,
+
     created(){
       this.userService = new UserService();
     },
+
     mounted(){
       this.userService.getAll().then(data => {
-        //console.log(data);
         this.userService = data.data;
         console.log(this.userService);
+
+        //??????????????????????????????????
 
       })
     }
@@ -89,50 +77,3 @@ export default {
 }
 
 </style>
-
-<!--Apenas mais linhas comentadas da teblea para testes, pode ser excluido... -->
-    <!-- <tbody>
-      <tr>
-        <th scope="row">2</th>
-        <td>Mithrandir</td>
-        <td>email@email.com</td>
-        <td>admin</td>
-        <td>true</td>
-      </tr>
-    </tbody>
-    <tbody>
-      <tr>
-        <th scope="row">3</th>
-        <td>Tarkûn</td>
-        <td>email@email.com</td>
-        <td>user</td>
-        <td>false</td>
-      </tr>
-    </tbody>
-      <tbody>
-          <tr>
-          <th scope="row">4</th>
-          <td>Olórin</td>
-          <td>email@email.com</td>
-          <td>user</td>
-          <td>true</td>
-          </tr>
-      </tbody>
-      <tbody>
-          <tr>
-          <th scope="row">5</th>
-          <td>Incánus</td>
-          <td>email@email.com</td>
-          <td>user</td>
-          <td>true</td>
-          </tr>
-      </tbody>
-      <tbody>
-          <tr>
-          <th scope="row">6</th>
-          <td>Gandalf</td>
-          <td>email@email.com</td>
-          <td>user</td>
-          <td>true</td>
-          </tr>
-      </tbody> -->
