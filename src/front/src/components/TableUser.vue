@@ -2,7 +2,27 @@
 
   <div>
     <h5>All Users</h5>
- 
+
+    <!-- PRIME VIEW TABLE-->
+
+    <!-- <DataTable :value="users" :paginator="true" :rows="10" paginatorTemplate="CurrentPageReport FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink RowsPerPageDropdown" :rowsPerPageOptions="[10,20,50]" currentPageReportTemplate="Showing {first} to {last} of {totalRecords}">
+        <Column field="id" header="ID"></Column>
+        <Column field="name" header="Nome"></Column>
+        <Column field="email" header="Email"></Column>
+        <Column field="password" header="Senha"></Column>
+        <Column field="user_role" header="UserRole"></Column>
+        <Column field="active" header="Status"></Column>
+        <template #paginatorLeft>
+            <Button type="button" icon="pi pi-refresh" class="p-button-text" />
+        </template>
+        <template #paginatorRight>
+            <Button type="button" icon="pi pi-cloud" class="p-button-text" />
+        </template>
+    </DataTable>  -->
+
+
+  <!-- BOOTSTRAP TABLE   -->
+
   <!-- <form class=" col-md-6 d-flex mb-2">
     <input class="form-control me-2" type="search" placeholder="Buscar usuários" aria-label="Search">
     <button class="btn bg-dark text-light ml-2" type="submit">Pesquisar</button>
@@ -33,6 +53,7 @@
     </tbody>
   </table> -->
  </div>
+
 </template>
 
 <script>
@@ -52,7 +73,10 @@ export default {
     },
     mounted(){
       this.userService.getAll().then(data => {
-        console.log(data);
+        //console.log(data);
+        this.userService = data.data;
+        console.log(this.userService);
+
       })
     }
 }
