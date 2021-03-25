@@ -5,7 +5,8 @@ module.exports = {
             '/api': {
                 target: 'http://localhost:8082',
                 ws: true,
-                changeOrigin: true
+                changeOrigin: true,
+                runtimeCompiler: true
             }
         }
     }
