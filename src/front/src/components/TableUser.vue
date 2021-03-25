@@ -2,22 +2,18 @@
 
   <div>
     <h5>All Users</h5>
-
     <template>
       <div>
         <b-table striped hover :items="items" :fields="fields"></b-table>
       </div>
     </template>
-
-
  </div>
 
 </template>
 
+
 <script>
-
 import UserService from '../service/UserService';
-
 export default {
     name: 'TableUser',
     data(){
@@ -61,6 +57,8 @@ export default {
     mounted(){
       this.userService.getAll().then(data => {
         this.userService = data.data;
+
+        
         console.log(this.userService);
 
         //??????????????????????????????????

@@ -22,6 +22,7 @@ public class UserController {
     private UserRepository userRepository;
 
     // AUTHENTICATION AND AUTHORIZATION:
+
     // logged normal user
     @PostMapping("/user")
     public String user() {
@@ -36,6 +37,7 @@ public class UserController {
     }
 
     //FULL CRUD CONTROL:
+    
     // find all users
     @GetMapping("/all-users")
     @ApiOperation(value = "SHOW ALL USERS")
