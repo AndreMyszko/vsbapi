@@ -26,7 +26,6 @@ public class UserController {
     // logged normal user
     @PostMapping("/user")
     public String user() {
-
         return ("Virtual Solution - User Loged In!");
     }
 
